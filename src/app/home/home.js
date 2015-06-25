@@ -14,7 +14,8 @@
  */
 angular.module( 'ngBoilerplate.home', [
   'ui.router',
-  'plusOne'
+  'plusOne',
+  'whichmango.services'
 ])
 
 /**
@@ -32,13 +33,24 @@ angular.module( 'ngBoilerplate.home', [
       }
     },
     data:{ pageTitle: 'Home' }
+  })
+  .state( 'group', {
+    url: '/home/:groupId',
+    views: {
+      "main": {
+        controller: 'HomeCtrl',
+        templateUrl: 'home/group.tpl.html'
+      }
+    },
+    data:{ pageTitle: 'Group' }
   });
 })
 
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'HomeCtrl', function HomeController( $scope ) {
+.controller( 'HomeCtrl', function HomeController( $scope, $stateParams, Groups ) {
+  $scope.activeGroup = Groups.get($stateParams.groupId);  
 })
 
 ;

@@ -20,6 +20,17 @@
 
 @import 'variables.less';
 
+/**
+ * Body
+ */
+
+body {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 
 /**
  * Typography
@@ -111,6 +122,77 @@ h2 {
   }
 }
 
+/**
+ * Sidebar
+ */
+
+.layout-sidebar {
+  position: absolute;
+  background-color: @color-sidebar;
+  height: 100%;
+  width: @sidebar-width;
+  overflow-y: auto;
+  color: white;
+  #gradient > .vertical(#f8c402, #f99700); 
+}
+
+/**
+ * Main content
+ */
+
+.layout-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin-left: @sidebar-width;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/**
+ * Sidebar item
+ */
+
+.sidebar-item {
+  padding: 15px 10px;
+  font-size: 18px;
+  cursor: pointer;
+  &:hover{
+    background-color: @color-hover;
+  }
+  &.active {
+    background-color: @color-active;
+  }
+}
+
+.sidebar-item-group-name {
+  padding: 15px 10px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.75)
+}
+
+.sidebar-item-group-list-divider {
+  padding: 5px 10px;
+  color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/**
+ * Group
+ */
+
+.group {
+  padding: 15px;
+  cursor: pointer;
+  &:hover {
+    background-color: @color-hover;
+  }
+  &.active {
+    background-color: @color-active;
+  }
+}
 
 /**
  * Now that all app-wide styles have been applied, we can load the styles for

@@ -33,7 +33,7 @@
     </script>
   </head>
   <body>
-    <div class="container">
+    <div class="container hide">
       <div class="navbar navbar-default">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" ng-init="menuCollapsed = true"
@@ -61,7 +61,7 @@
               </a>
             </li>
             <li ui-sref-active="active">
-              <a href ui-sref="about">
+              <a href ui-sref="events">
                 <i class="fa fa-info-circle"></i>
                 What is it?
               </a>
@@ -89,9 +89,31 @@
       </div>
     </div>
 
-    <div class="container" ui-view="main"></div>
+    <div class="layout-sidebar">
+      <div class="sidebar-item" ui-sref-active="active" ui-sref="events">Events</div>
+      <div class="sidebar-item" ui-sref-active="active" ui-sref="calendar">My Calendar</div>
+      <div class="sidebar-item-group">
+        <div class="sidebar-item-group-name">Groups</div>
+        <div class="sidebar-item-group-list-divider">My Groups</div>
+        <div class="sidebar-item-group-list">
+          <div ui-sref-active="active" ui-sref="group({groupId: group.id})" ng-repeat="group in groups" class="group">
+            <img ng-src="{{group.imageUrl}}" alt="" class="group-avatar img-circle">
+            <span class="group-name">{{group.name}}</span>
+          </div>
+        </div>
+        <div class="sidebar-item-group-list-divider">Others</div>
+        <div class="sidebar-item-group-list">
+          <div ui-sref-active="active" ui-sref="group({groupId: otherGroup.id})" ng-repeat="otherGroup in otherGroups" class="group">
+            <img ng-src="{{otherGroup.imageUrl}}" alt="" class="group-avatar img-circle">
+            <span class="group-name">{{otherGroup.name}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <footer class="footer">
+    <div class="layout-main" ui-view="main"></div>
+
+    <footer class="footer hide">
       <div class="container">
         <div class="footer-inner">
           <ul class="social">

@@ -1,23 +1,23 @@
-angular.module( 'ngBoilerplate.about', [
+angular.module( 'ngBoilerplate.calendar', [
   'ui.router',
   'placeholders',
   'ui.bootstrap'
 ])
 
 .config(function config( $stateProvider ) {
-  $stateProvider.state( 'about', {
-    url: '/about',
+  $stateProvider.state( 'calendar', {
+    url: '/calendar',
     views: {
       "main": {
-        controller: 'AboutCtrl',
-        templateUrl: 'about/about.tpl.html'
+        controller: 'CalendarCtrl',
+        templateUrl: 'calendar/calendar.tpl.html'
       }
     },
     data:{ pageTitle: 'What is It?' }
   });
 })
 
-.controller( 'AboutCtrl', function AboutCtrl( $scope ) {
+.controller( 'CalendarCtrl', function CalendarCtrl( $scope ) {
   // This is simple a demo for UI Boostrap.
   $scope.dropdownDemoItems = [
     "The first choice!",
