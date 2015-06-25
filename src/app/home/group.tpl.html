@@ -1,1 +1,30 @@
-<div>Group {{activeGroup.name}}</div>
+<div class="group-header">
+  {{activeGroup.name}}
+</div>
+
+<div class="carousel-wrapper">
+  <slick settings="slickConfig" control="slickHandle" media="media" src="eventBoxTemplate.html">
+  </slick>
+</div>
+
+<script type="text/ng-template" id="eventBoxTemplate.html">
+  <div ng-repeat="card in media" class="slide" on-finish-render="init()">
+    <div class= "event box">
+        <div class="event-inner box space">
+            <div class ="event-name ">
+                <p class= "title"> {{card.name}}</p>
+                <p class= "subtitle"> {{card.date}} {{card.time}}</p>
+            </div>
+        </div>   
+
+        <div class ="divider box"> </div>
+
+        <div class="event-inner box space">
+             <div class ="event-location ">
+                <img src="assets/images/icn_map-green.png" alt="">
+                <p>{{card.location}}</p>
+             </div>
+        </div>
+    </div>
+  </div>
+</script>

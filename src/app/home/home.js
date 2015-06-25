@@ -15,7 +15,8 @@
 angular.module( 'ngBoilerplate.home', [
   'ui.router',
   'plusOne',
-  'whichmango.services'
+  'whichmango.services',
+  'bardo.directives'
 ])
 
 /**
@@ -50,8 +51,28 @@ angular.module( 'ngBoilerplate.home', [
  * And of course we define a controller for our route.
  */
 .controller( 'HomeCtrl', function HomeController( $scope, $stateParams, Groups ) {
-  $scope.activeGroup = Groups.get($stateParams.groupId);  
+
+  $scope.activeGroup = Groups.get($stateParams.groupId);
+
+  $scope.slickConfig = {
+      dots: false,
+      autoplay: false,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      centerMode: true,
+      prevArrow:'<button type="button" class="btn slick-prev">Previous</button>',
+      nextArrow:'<button type="button" class="btn slick-next">Next</button>'
+  };
+
+  $scope.slickHandle = {
+  };
+
+  $scope.media = Groups.getEvents($stateParams.groupId);
+
+  $scope.onDirectiveInit = function() {
+      $('.slick-slide.slick-active').find('video').each(playVideo);
+  };
+
 })
 
 ;
-

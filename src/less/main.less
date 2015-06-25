@@ -43,6 +43,34 @@ body {
   src: local('Roboto Regular'), local('Roboto-Regular'), url(fonts/Roboto-Regular.woff) format('woff');
 }
 
+@font-face {
+  font-family: Babydoll;
+  src: url(fonts/BabyDoll.ttf);
+}
+@font-face {
+  font-family: Museosans;
+  font-weight: 300  ;
+  src: url(fonts/MuseoSans_300.otf);
+}
+@font-face {
+  font-family: Museosans;
+  font-weight: 100  ;
+  src: url(fonts/MuseoSans_100.otf);
+}
+
+@font-face {
+  font-family: Museosans;
+  font-weight: 500  ;
+  src: url(fonts/MuseoSans_500.otf);
+}
+
+@font-face {
+  font-family: Museosans;
+  font-weight: 300  ;
+  font-style: italic;
+  src: url(fonts/MuseoSans_300_italic.otf);
+}
+
 code, pre, .pre {
   padding: 5px;
   margin: 10px 0;
@@ -60,12 +88,11 @@ pre {
   padding: 5px;
 }
 
-.page-header {
-  margin-top: 60px;
-
-  &:first-child {
-    margin-top: 20px;
-  }
+.group-header {
+  font-family: Babydoll;
+  font-size: 24px;
+  text-align: center;
+  padding: 20px 0;
 }
 
 h2 {
@@ -73,6 +100,13 @@ h2 {
   color: #666;
 }
 
+/**
+ * Button
+ */
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+  outline: none;
+}
 
 /**
  * Navigation
@@ -149,6 +183,7 @@ h2 {
   margin-left: @sidebar-width;
   overflow-y: scroll;
   overflow-x: hidden;
+  background-image: url(images/bkg_ptn_2.png);
 }
 
 /**

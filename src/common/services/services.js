@@ -111,12 +111,7 @@ angular.module( 'whichmango.services', [] )
       return null;
     },
     getEvents: function(groupId) {
-      for (var i = 0; i < groupList.length; i++) {
-        if (groupList[i].id === parseInt(groupId,10)) {
-          return groupList[i];
-        }
-      }
-      return null;
+      return groupEvents;
     }
   };
 

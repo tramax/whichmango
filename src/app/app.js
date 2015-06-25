@@ -4,8 +4,9 @@ angular.module( 'ngBoilerplate', [
   'ngBoilerplate.home',
   'ngBoilerplate.events',
   'ngBoilerplate.calendar',
+  'ui.router',
   'whichmango.services',
-  'ui.router'
+  'bardo.directives'
 ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
