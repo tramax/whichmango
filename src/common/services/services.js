@@ -168,6 +168,33 @@ angular.module( 'whichmango.services', [] )
       location: "78 Clementi Ave 2, 18-09, Singapore 001222",
       groupName: "2359 Badminton",
       reply: 0
+    },
+    {
+      id: 21,
+      name: "Badminton Week 20",
+      date: "Mon Jun 22, 2015",
+      time: "8 AM - 10 AM",
+      location: "SAFRA Mount Faber, 2 Telok Blangah Way, Singapore 098803",
+      groupName: "2359 Badminton",
+      reply: 0
+    },
+    {
+      id: 22,
+      name: "Mad Max Movie",
+      date: "Wed Jun 23, 2015",
+      time: "1 PM - 5 PM",
+      location: "9 Jalan Rumah Tinggi, 12-455, Singapore 150009",
+      groupName: "Movie Club",
+      reply: 1
+    },
+    {
+      id: 23,
+      name: "Video Game Outing",
+      date: "Thur Jun 25, 2015",
+      time: "4 PM - 9 PM",
+      location: "Vivo City, 4-12, Singapore 189982",
+      groupName: "2359 Badminton",
+      reply: 2
     }
   ];
 
