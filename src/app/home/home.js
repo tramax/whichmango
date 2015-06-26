@@ -90,6 +90,11 @@ angular.module( 'ngBoilerplate.home', [
     });
   });
 
+  $scope.setAnswer = function(answer) {
+    $scope.activeEvent.question.answer = answer;
+    updateAnswer();
+  };
+
   function updateAnswer() {
     $scope.answer.yes = false;
     $scope.answer.no = false;
@@ -114,16 +119,38 @@ angular.module( 'ngBoilerplate.home', [
     var modalInstance = $modal.open({
       animation: true,
       templateUrl: 'modalNewEvent.html',
-      controller: 'ModalInstanceCtrl',
+      controller: 'ModalNewEventInstanceCtrl',
       size: size,
       resolve: {
       }
     });
   };
 
+  $scope.openCommentsModal = function (size) {
+
+    var modalInstance = $modal.open({
+      animation: true,
+      templateUrl: 'modalComments.html',
+      controller: 'ModalCommentsInstanceCtrl',
+      windowClass: 'modal-comments'
+    });
+  };
+
 })
 
-.controller('ModalInstanceCtrl', function ($scope, $modalInstance) {
+.controller('ModalNewEventInstanceCtrl', function ($scope, $modalInstance) {
+
+  $scope.ok = function () {
+    $modalInstance.close();
+  };
+
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+  };
+
+})
+
+.controller('ModalCommentsInstanceCtrl', function ($scope, $modalInstance) {
 
   $scope.ok = function () {
     $modalInstance.close();

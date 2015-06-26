@@ -32,17 +32,46 @@
 </script>
 
 <div class="question-wrapper">
-  <div class="question-title">{{activeEvent.question.title}}</div>
+  <div class="clearfix">
+    <div class="question-title">{{activeEvent.question.title}}</div>
+  </div>
+
+  <!-- buttons for the rsvp -->
+
+  <ul class = "response-btn">
+      <li>
+           <a href="javascript:;" class="round green rsvp-btn" ng-class="{'active': answer.yes}" ng-click="setAnswer(1)">
+              <button class= "yes-btn btn green" data-badge= "12">
+                  <div class= "answer"> Yes</div>
+                  <span class="round" id="round-text">Be the man to-go
+                  </span>
+              </button>
+              </a>
+      </li>
+
+      <li>
+          <a href="javascript:;" class="round yellow rsvp-btn" ng-class="{'active': answer.maybe}" ng-click="setAnswer(2)">
+              <button class= "maybe-btn btn yellow"  data-badge= "4">
+              <div class= "answer"> Maybe</div>
+                  <span class="round" id="round-text">Don't do a Daud!
+                  </span>
+              </button>
+          </a>
+      </li>
+
+      <li>
+          <a href="javascript:;" class="round red rsvp-btn" ng-class="{'active': answer.no}" ng-click="setAnswer(3)">
+              <button class= "no-btn btn red" data-badge= "2">
+                 <div class= "answer"> No</div>
+                  <span class="round" id="round-text">Change your mind later
+                  </span>
+              </button>
+          </a>
+      </li>
+  </ul>
 </div>
 
-<div class="btn" ng-class="{'btn-primary': answer.yes}">Yes</div>
-<div class="btn" ng-class="{'btn-primary': answer.maybe}">Maybe</div>
-<div class="btn" ng-class="{'btn-primary': answer.no}">No</div>
-
-
-Active event: {{activeEvent.name}}
-
-<div class="comment-panel btn btn-primary">
+<div class="comment-panel btn btn-primary" ng-click="openCommentsModal('lg')">
   27 Comments
 </div>
 
@@ -80,6 +109,20 @@ Active event: {{activeEvent.name}}
           </label>
         </div>
       </form>
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+      <button class="btn btn-primary" ng-click="ok()">Submit</button>
+  </div>
+</script>
+
+
+<script type="text/ng-template" id="modalComments.html">
+  <div class="modal-header">
+      <h3 class="modal-title">Comments</h3>
+  </div>
+  <div class="modal-body">
+      comment
   </div>
   <div class="modal-footer">
       <button class="btn btn-default" ng-click="cancel()">Cancel</button>
