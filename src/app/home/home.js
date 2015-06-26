@@ -50,7 +50,7 @@ angular.module( 'ngBoilerplate.home', [
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'HomeCtrl', function HomeController( $scope, $stateParams, Groups ) {
+.controller( 'HomeCtrl', function HomeController( $scope, $stateParams, $modal, Groups ) {
 
   $scope.activeGroup = Groups.get($stateParams.groupId);
 
@@ -109,6 +109,29 @@ angular.module( 'ngBoilerplate.home', [
     }
   }
 
+  $scope.openCreateEventModal = function (size) {
+
+    var modalInstance = $modal.open({
+      animation: true,
+      templateUrl: 'modalNewEvent.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+      }
+    });
+  };
+
+})
+
+.controller('ModalInstanceCtrl', function ($scope, $modalInstance) {
+
+  $scope.ok = function () {
+    $modalInstance.close();
+  };
+
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+  };
 
 })
 

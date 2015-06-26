@@ -131,11 +131,7 @@ angular.module( 'whichmango.services', [] )
       time: "8 AM - 10 AM",
       location: "SAFRA Mount Faber, 2 Telok Blangah Way, Singapore 098803",
       groupName: "2359 Badminton",
-      question: {
-        title: "Are You Going?",
-        maybeAllowed: true,
-        answer: 0
-      }
+      reply: 0
     },
     {
       id: 22,
@@ -144,11 +140,7 @@ angular.module( 'whichmango.services', [] )
       time: "1 PM - 5 PM",
       location: "9 Jalan Rumah Tinggi, 12-455, Singapore 150009",
       groupName: "Movie Club",
-      question: {
-        title: "A Must See?",
-        maybeAllowed: false,
-        answer: 1
-      }
+      reply: 1
     },
     {
       id: 23,
@@ -157,11 +149,7 @@ angular.module( 'whichmango.services', [] )
       time: "4 PM - 9 PM",
       location: "Vivo City, 4-12, Singapore 189982",
       groupName: "2359 Badminton",
-      question: {
-        title: "Are You Joining Us Or Not?",
-        maybeAllowed: true,
-        answer: 2
-      }
+      reply: 2
     },
     {
       id: 24,
@@ -170,11 +158,7 @@ angular.module( 'whichmango.services', [] )
       time: "4 PM - 9 PM",
       location: "10 Anson Road, 23-01, Singapore 098871",
       groupName: "2359 Hackathon",
-      question: {
-        title: "Is It Good For You?",
-        maybeAllowed: true,
-        answer: 0
-      }
+      reply: null
     },
     {
       id: 25,
@@ -183,11 +167,7 @@ angular.module( 'whichmango.services', [] )
       time: "9 PM - 11 PM",
       location: "78 Clementi Ave 2, 18-09, Singapore 001222",
       groupName: "2359 Badminton",
-      question: {
-        title: "I'll Be Seeing You On This Day Right?",
-        maybeAllowed: true,
-        answer: 3
-      }
+      reply: 0
     }
   ];
 

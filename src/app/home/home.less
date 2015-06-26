@@ -21,7 +21,7 @@
 .event-name{
   font-family: Museosans;
   font-weight: 300;
-  padding: 0px 20px 0 50px;
+  padding: 0px 10px;
 }
 .event-inner .event-location{
   padding: 0px 20px 0 50px;
@@ -71,7 +71,7 @@
   font-family: Museosans;
 }
 .divider{
-  background: gray;
+  background: rgba(0, 0, 0, 0.1);
   height:1px;
 }
 
@@ -91,18 +91,15 @@
   color:#ffffff;
   text-align: center;
   font-family: Museosans;
+  height: 30px;
+  line-height: 30px;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .yes{
   background:#7fc6a4;
 }
 .no{
   background:#d24949;
-}
-.event-rsvp.yes{
-  padding:5px 0px;
-}
-.event-rsvp.no{
-  padding:5px 0px;
 }
 .rsvp{
   display:block;
@@ -119,11 +116,9 @@
 }
 
 .rsvp a{
-  color:#7fc6a4;
+  color: @color-positive;
   text-decoration: none; 
   display:block;
-  padding:6.5px 15px;
-
 }
 .rsvp a:hover{
   background:rgba(127, 198, 164,1);
@@ -169,7 +164,6 @@
  */
 
 .comment-panel {
-  background-color: @color-positive;
   position: absolute;
   bottom: 0;
   width: 80%;

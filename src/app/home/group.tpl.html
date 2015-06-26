@@ -2,6 +2,8 @@
   {{activeGroup.name}}
 </div>
 
+<button class="btn btn-primary btn-top-left" ng-click="openCreateEventModal()">Create event</button>
+
 <div class="carousel-wrapper">
   <slick settings="slickConfig" control="slickHandle" media="media" src="eventBoxTemplate.html">
   </slick>
@@ -40,6 +42,47 @@
 
 Active event: {{activeEvent.name}}
 
-<div class="comment-panel">
+<div class="comment-panel btn btn-primary">
   27 Comments
 </div>
+
+<script type="text/ng-template" id="modalNewEvent.html">
+  <div class="modal-header">
+      <h3 class="modal-title">New Event</h3>
+  </div>
+  <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Event Name">
+        </div>
+        <div class="form-group">
+          <label>Date</label>
+          <input type="date" class="form-control">
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <label>From</label>
+            <input type="time" class="form-control">
+          </div>
+          <div class="col-sm-6">
+            <label>To</label>
+            <input type="time" class="form-control">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Location</label>
+          <input type="text" class="form-control" placeholder="Location">
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Allow &quot;Maybe&quot; option
+          </label>
+        </div>
+      </form>
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+      <button class="btn btn-primary" ng-click="ok()">Submit</button>
+  </div>
+</script>

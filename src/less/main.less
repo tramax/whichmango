@@ -12,7 +12,6 @@
 
 @import '../../vendor/bootstrap/less/bootstrap.less';
 
-
 /**
  * This is our main variables file. We must include it last so we can overwrite any variable
  * definitions in our imported stylesheets.
@@ -106,6 +105,25 @@ h2 {
 
 .btn:focus, .btn:active:focus, .btn.active:focus {
   outline: none;
+}
+
+.btn-top-left {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/**
+ * Modal
+ */
+
+.modal-header {
+  background-color: @color-accent;
+  color: white;
+}
+
+.modal-content {
+  overflow: hidden;
 }
 
 /**
@@ -234,7 +252,7 @@ h2 {
  */
 
 .list-divider {
-  
+
 }
 
 /**

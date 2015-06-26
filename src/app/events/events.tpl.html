@@ -11,9 +11,22 @@
                 {{event.location}}
             </div>
         </div>
-
-        <div class="event-rsvp yes">
-             yes
+        
+        <div ng-switch="event.reply">
+            <div class="event-rsvp" ng-switch-when="0">
+                <button type="button" class="rsvp">
+                     <a href="">click here to rsvp</a>
+                 </button>
+            </div>
+            <div class="event-rsvp yes" ng-switch-when="1">
+                yes
+            </div>
+            <div class="event-rsvp no" ng-switch-when="2">
+                no
+            </div>
+            <div class="event-rsvp" ng-switch-default>
+                You're not a member
+            </div>
         </div>
     </div>
 </div>
