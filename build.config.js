@@ -68,6 +68,7 @@ module.exports = {
       'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
       'vendor/angular-ui-router/release/angular-ui-router.js',
       'vendor/angular-ui-utils/modules/route/route.js',
+      'vendor/angular-filter/dist/angular-filter.min.js',
       'vendor/angular-slick-carousel/app/vendor/slick/slick.js',
       'vendor/angular-slick-carousel/app/angular-slick-carousel/slick.min.js'
     ],

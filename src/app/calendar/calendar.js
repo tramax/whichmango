@@ -2,7 +2,8 @@ angular.module( 'ngBoilerplate.calendar', [
   'ui.router',
   'placeholders',
   'ui.bootstrap',
-  'whichmango.services'
+  'whichmango.services',
+  'angular.filter'
 ])
 
 .config(function config( $stateProvider ) {
