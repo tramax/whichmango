@@ -28,3 +28,18 @@
     </div>
   </div>
 </script>
+
+<div class="question-wrapper">
+  <div class="question-title">{{activeEvent.question.title}}</div>
+</div>
+
+<div class="btn" ng-class="{'btn-primary': answer.yes}">Yes</div>
+<div class="btn" ng-class="{'btn-primary': answer.maybe}">Maybe</div>
+<div class="btn" ng-class="{'btn-primary': answer.no}">No</div>
+
+
+Active event: {{activeEvent.name}}
+
+<div class="comment-panel">
+  27 Comments
+</div>

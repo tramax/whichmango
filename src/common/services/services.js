@@ -49,7 +49,8 @@ angular.module( 'whichmango.services', [] )
       location: "SAFRA Mount Faber, 2 Telok Blangah Way, Singapore 098803",
       question: {
         title: "Are You Going?",
-        maybeAllowed: true
+        maybeAllowed: true,
+        answer: 0
       }
     },
     {
@@ -59,8 +60,9 @@ angular.module( 'whichmango.services', [] )
       time: "1 PM - 5 PM",
       location: "9 Jalan Rumah Tinggi, 12-455, Singapore 150009",
       question: {
-        title: "Are You Going?",
-        maybeAllowed: false
+        title: "A Must See?",
+        maybeAllowed: false,
+        answer: 1
       }
     },
     {
@@ -70,8 +72,9 @@ angular.module( 'whichmango.services', [] )
       time: "4 PM - 9 PM",
       location: "Vivo City, 4-12, Singapore 189982",
       question: {
-        title: "Are You Going?",
-        maybeAllowed: true
+        title: "Are You Joining Us Or Not?",
+        maybeAllowed: true,
+        answer: 2
       }
     },
     {
@@ -81,8 +84,9 @@ angular.module( 'whichmango.services', [] )
       time: "4 PM - 9 PM",
       location: "10 Anson Road, 23-01, Singapore 098871",
       question: {
-        title: "Are You Going?",
-        maybeAllowed: true
+        title: "Is It Good For You?",
+        maybeAllowed: true,
+        answer: 0
       }
     },
     {
@@ -92,8 +96,9 @@ angular.module( 'whichmango.services', [] )
       time: "9 PM - 11 PM",
       location: "78 Clementi Ave 2, 18-09, Singapore 001222",
       question: {
-        title: "Are You Going?",
-        maybeAllowed: true
+        title: "I'll Be Seeing You On This Day Right?",
+        maybeAllowed: true,
+        answer: 3
       }
     }
   ];
@@ -112,6 +117,91 @@ angular.module( 'whichmango.services', [] )
     },
     getEvents: function(groupId) {
       return groupEvents;
+    }
+  };
+
+})
+
+.factory('Events', function() {
+  var events = [
+    {
+      id: 21,
+      name: "Badminton Week 20",
+      date: "Mon Jun 22, 2015",
+      time: "8 AM - 10 AM",
+      location: "SAFRA Mount Faber, 2 Telok Blangah Way, Singapore 098803",
+      groupName: "2359 Badminton",
+      question: {
+        title: "Are You Going?",
+        maybeAllowed: true,
+        answer: 0
+      }
+    },
+    {
+      id: 22,
+      name: "Mad Max Movie",
+      date: "Wed Jun 23, 2015",
+      time: "1 PM - 5 PM",
+      location: "9 Jalan Rumah Tinggi, 12-455, Singapore 150009",
+      groupName: "Movie Club",
+      question: {
+        title: "A Must See?",
+        maybeAllowed: false,
+        answer: 1
+      }
+    },
+    {
+      id: 23,
+      name: "Video Game Outing",
+      date: "Thur Jun 25, 2015",
+      time: "4 PM - 9 PM",
+      location: "Vivo City, 4-12, Singapore 189982",
+      groupName: "2359 Badminton",
+      question: {
+        title: "Are You Joining Us Or Not?",
+        maybeAllowed: true,
+        answer: 2
+      }
+    },
+    {
+      id: 24,
+      name: "2359 Hackathon 2015",
+      date: "Mon Aug 29, 2015",
+      time: "4 PM - 9 PM",
+      location: "10 Anson Road, 23-01, Singapore 098871",
+      groupName: "2359 Hackathon",
+      question: {
+        title: "Is It Good For You?",
+        maybeAllowed: true,
+        answer: 0
+      }
+    },
+    {
+      id: 25,
+      name: "Lorem accusantium maxime",
+      date: "Mon Aug 30, 2015",
+      time: "9 PM - 11 PM",
+      location: "78 Clementi Ave 2, 18-09, Singapore 001222",
+      groupName: "2359 Badminton",
+      question: {
+        title: "I'll Be Seeing You On This Day Right?",
+        maybeAllowed: true,
+        answer: 3
+      }
+    }
+  ];
+
+  return {
+    all: function() {
+      return events;
+    },
+    get: function(eventId) {
+      for (var i = 0; i < events.length; i++) {
+        if (events[i].id === parseInt(eventId,10)) {
+          return events[i];
+        }
+      }
+      return null;
     }
   };
 

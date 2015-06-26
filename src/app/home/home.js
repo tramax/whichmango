@@ -54,6 +54,11 @@ angular.module( 'ngBoilerplate.home', [
 
   $scope.activeGroup = Groups.get($stateParams.groupId);
 
+  $scope.answer = {};
+  $scope.answer.yes = false;
+  $scope.answer.no = false;
+  $scope.answer.maybe = false;
+
   $scope.slickConfig = {
       dots: false,
       autoplay: false,
@@ -68,10 +73,42 @@ angular.module( 'ngBoilerplate.home', [
   };
 
   $scope.media = Groups.getEvents($stateParams.groupId);
+  $scope.activeEvent = $scope.media[0];
+  updateAnswer();
 
   $scope.onDirectiveInit = function() {
-      $('.slick-slide.slick-active').find('video').each(playVideo);
+    
   };
+
+  // On before slide change
+  $('slick').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+    console.log(nextSlide);
+    $scope.$apply(function(){
+      // perform any model changes or method invocations here on angular app.
+      $scope.activeEvent = $scope.media[nextSlide];
+      updateAnswer();
+    });
+  });
+
+  function updateAnswer() {
+    $scope.answer.yes = false;
+    $scope.answer.no = false;
+    $scope.answer.maybe = false;
+    switch ($scope.activeEvent.question.answer) {
+      case 1:
+        $scope.answer.yes = true;
+        break;
+      case 2:
+        $scope.answer.maybe = true;
+        break;
+      case 3:
+        $scope.answer.no = true;
+        break;
+      default:
+        break;
+    }
+  }
+
 
 })
 
