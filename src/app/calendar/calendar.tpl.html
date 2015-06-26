@@ -1,1 +1,22 @@
-Calendar Page
+<div class="events-wrapper">
+  <div ng-repeat="event in events" class="calendar box ">
+    <div class="event-details">
+      <div class ="date subtitle space-bot">{{event.date}}</div>
+      <div class ="group-name subtitle-small">{{event.groupName}}</div>
+      <div class ="event-title title space-bot">
+        {{event.name}} 
+      </div>
+      <div class= "time subtitle space-bot">{{event.time}}</div>
+      <div class ="event-location space-bot">
+        {{event.location}}
+      </div>
+    </div>
+
+    <div ng-show="event.attend" class="event-rsvp yes">
+     yes
+    </div>
+    <div ng-show="!event.attend" class="event-rsvp no">
+     no
+    </div>
+ </div>
+</div>

@@ -191,9 +191,60 @@ angular.module( 'whichmango.services', [] )
     }
   ];
 
+  var calendar = [
+    {
+      id: 26,
+      name: "Lorem accusantium maxime",
+      date: "Mon Aug 30, 2015",
+      time: "9 PM - 11 PM",
+      location: "78 Clementi Ave 2, 18-09, Singapore 001222",
+      groupName: "2359 Badminton",
+      attend: true
+    },
+    {
+      id: 27,
+      name: "Badminton Week 20",
+      date: "Mon Aug 30, 2015",
+      time: "8 AM - 10 AM",
+      location: "SAFRA Mount Faber, 2 Telok Blangah Way, Singapore 098803",
+      groupName: "2359 Badminton",
+      attend: true
+    },
+    {
+      id: 28,
+      name: "Mad Max Movie",
+      date: "Wed Jun 23, 2015",
+      time: "1 PM - 5 PM",
+      location: "9 Jalan Rumah Tinggi, 12-455, Singapore 150009",
+      groupName: "Movie Club",
+      attend: false
+    },
+    {
+      id: 29,
+      name: "Video Game Outing",
+      date: "Thur Jun 25, 2015",
+      time: "4 PM - 9 PM",
+      location: "Vivo City, 4-12, Singapore 189982",
+      groupName: "2359 Badminton",
+      attend: true
+    },
+    {
+      id: 30,
+      name: "2359 Hackathon 2015",
+      date: "Thur Jun 25, 2015",
+      time: "4 PM - 9 PM",
+      location: "10 Anson Road, 23-01, Singapore 098871",
+      groupName: "2359 Hackathon",
+      attend: false
+    }
+  ];
+
   return {
     all: function() {
       return events;
+    },
+    getCalendar: function(userId) {
+      return calendar;
     },
     get: function(eventId) {
       for (var i = 0; i < events.length; i++) {

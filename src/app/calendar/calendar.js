@@ -1,7 +1,8 @@
 angular.module( 'ngBoilerplate.calendar', [
   'ui.router',
   'placeholders',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'whichmango.services'
 ])
 
 .config(function config( $stateProvider ) {
@@ -17,13 +18,9 @@ angular.module( 'ngBoilerplate.calendar', [
   });
 })
 
-.controller( 'CalendarCtrl', function CalendarCtrl( $scope ) {
+.controller( 'CalendarCtrl', function CalendarCtrl( $scope, Events ) {
   // This is simple a demo for UI Boostrap.
-  $scope.dropdownDemoItems = [
-    "The first choice!",
-    "And another choice for you.",
-    "but wait! A third!"
-  ];
+  $scope.events = Events.getCalendar();
 })
 
 ;
