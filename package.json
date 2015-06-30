@@ -1,7 +1,7 @@
 {
-  "author": "Josh David Miller",
-  "name": "ngbp",
-  "version": "0.3.2",
+  "author": "2359 Media",
+  "name": "WhichMango",
+  "version": "0.0.1",
   "homepage": "https://github.com/ngbp/ngbp",
   "licenses": {
     "type": "MIT",
@@ -39,6 +39,6 @@
   "devDependencies": {},
   "scripts": {
     "start": "node app.js",
-    "postinstall": "bower install && grunt build"
+    "postinstall": "bower install && grunt compile"
   }
 }
