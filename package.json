@@ -38,6 +38,7 @@
   "devDependencies": {
   },
   "scripts": {
-    "postinstall": "bash ./post_install.sh"
+    "start": "node app.js",
+    "postinstall": "bower install && grunt build"
   }
 }
