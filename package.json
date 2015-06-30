@@ -35,5 +35,8 @@
     "karma-jasmine": "^0.1.5"
   },
   "devDependencies": {
+  },
+  "scripts": {
+    "postinstall": "bash ./post_install.sh"
   }
 }
