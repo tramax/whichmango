@@ -2,10 +2,10 @@ var express = require('express');
 var app = express();
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/build/index.html');
+  res.sendFile(__dirname + '/bin/index.html');
 });
 
-app.use(express.static('build'));
+app.use(express.static('bin'));
 
 var server = app.listen(3000, function () {
 
