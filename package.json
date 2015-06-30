@@ -39,6 +39,6 @@
   "devDependencies": {},
   "scripts": {
     "start": "node app.js",
-    "postinstall": "bower install && grunt compile"
+    "postinstall": "bower install && grunt build --force && grunt compile"
   }
 }
